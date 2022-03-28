@@ -8,10 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Random;
-
-public class MainActivity extends AppCompatActivity{
-
+public class MainActivity extends AppCompatActivity {
 
     TextView textViewResultado;
     ImageView imagenView;
@@ -25,7 +22,7 @@ public class MainActivity extends AppCompatActivity{
         initComponents();
     }
 
-    private void initComponents(){
+    private void initComponents() {
         textViewResultado = findViewById(R.id.textViewResultado);
         imagenView = findViewById(R.id.imagenView);
         btnLanzar = findViewById(R.id.btnLanzar);
@@ -33,37 +30,38 @@ public class MainActivity extends AppCompatActivity{
         btnLanzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final int VALOR = (int) (Math.random() * 6) +1;
+                final int valor = (int) (Math.random() * 6) + 1;
+                final String resultado = "Resultado: " + String.valueOf(valor);
 
-                switch (VALOR){
+                switch (valor) {
                     case 1:
                         imagenView.setImageDrawable(null);
-                        textViewResultado.setText(String.valueOf(VALOR));
+                        textViewResultado.setText(resultado);
                         imagenView.setImageResource(R.drawable.dice_1);
                         break;
                     case 2:
                         imagenView.setImageDrawable(null);
-                        textViewResultado.setText(String.valueOf(VALOR));
+                        textViewResultado.setText(resultado);
                         imagenView.setImageResource(R.drawable.dice_2);
                         break;
                     case 3:
                         imagenView.setImageDrawable(null);
-                        textViewResultado.setText(String.valueOf(VALOR));
+                        textViewResultado.setText(resultado);
                         imagenView.setImageResource(R.drawable.dice_3);
                         break;
                     case 4:
                         imagenView.setImageDrawable(null);
-                        textViewResultado.setText(String.valueOf(VALOR));
+                        textViewResultado.setText(resultado);
                         imagenView.setImageResource(R.drawable.dice_4);
                         break;
                     case 5:
                         imagenView.setImageDrawable(null);
-                        textViewResultado.setText(String.valueOf(VALOR));
+                        textViewResultado.setText(resultado);
                         imagenView.setImageResource(R.drawable.dice_5);
                         break;
                     case 6:
                         imagenView.setImageDrawable(null);
-                        textViewResultado.setText(String.valueOf(VALOR));
+                        textViewResultado.setText(resultado);
                         imagenView.setImageResource(R.drawable.dice_6);
                         break;
                     default:
