@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
 
     TextView textViewResultado;
@@ -30,49 +30,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imagenView = findViewById(R.id.imagenView);
         btnLanzar = findViewById(R.id.btnLanzar);
 
-        btnLanzar.setOnClickListener(this);
+        btnLanzar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final int VALOR = (int) (Math.random() * 6) +1;
 
-    }
+                switch (VALOR){
+                    case 1:
+                        imagenView.setImageDrawable(null);
+                        textViewResultado.setText(String.valueOf(VALOR));
+                        imagenView.setImageResource(R.drawable.dice_1);
+                        break;
+                    case 2:
+                        imagenView.setImageDrawable(null);
+                        textViewResultado.setText(String.valueOf(VALOR));
+                        imagenView.setImageResource(R.drawable.dice_2);
+                        break;
+                    case 3:
+                        imagenView.setImageDrawable(null);
+                        textViewResultado.setText(String.valueOf(VALOR));
+                        imagenView.setImageResource(R.drawable.dice_3);
+                        break;
+                    case 4:
+                        imagenView.setImageDrawable(null);
+                        textViewResultado.setText(String.valueOf(VALOR));
+                        imagenView.setImageResource(R.drawable.dice_4);
+                        break;
+                    case 5:
+                        imagenView.setImageDrawable(null);
+                        textViewResultado.setText(String.valueOf(VALOR));
+                        imagenView.setImageResource(R.drawable.dice_5);
+                        break;
+                    case 6:
+                        imagenView.setImageDrawable(null);
+                        textViewResultado.setText(String.valueOf(VALOR));
+                        imagenView.setImageResource(R.drawable.dice_6);
+                        break;
+                    default:
+                        System.out.println("Definido");
+                }
+            }
+        });
 
-    @Override
-    public void onClick(View view) {
-
-        Random random = new Random();
-        int VALOR = random.nextInt(7-1) +1;
-
-        switch (VALOR){
-            case 1:
-                imagenView.setImageDrawable(null);
-                textViewResultado.setText(String.valueOf(VALOR));
-                imagenView.setImageResource(R.drawable.dice_1);
-                break;
-            case 2:
-                imagenView.setImageDrawable(null);
-                textViewResultado.setText(String.valueOf(VALOR));
-                imagenView.setImageResource(R.drawable.dice_2);
-                break;
-            case 3:
-                imagenView.setImageDrawable(null);
-                textViewResultado.setText(String.valueOf(VALOR));
-                imagenView.setImageResource(R.drawable.dice_3);
-                break;
-            case 4:
-                imagenView.setImageDrawable(null);
-                textViewResultado.setText(String.valueOf(VALOR));
-                imagenView.setImageResource(R.drawable.dice_4);
-                break;
-            case 5:
-                imagenView.setImageDrawable(null);
-                textViewResultado.setText(String.valueOf(VALOR));
-                imagenView.setImageResource(R.drawable.dice_5);
-                break;
-            case 6:
-                imagenView.setImageDrawable(null);
-                textViewResultado.setText(String.valueOf(VALOR));
-                imagenView.setImageResource(R.drawable.dice_6);
-                break;
-            default:
-                System.out.println("Definido");
-        }
     }
 }
